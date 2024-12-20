@@ -13,6 +13,8 @@ If we go from left tp right, the images are for prompts: `Airplane`, `Automobile
 
 As we can see it's close enough to real images of that prompts, but due to lack of computational resources I didn't run it more than 250 epochs.
 
+## Saved weights: You can find weights of trained model by the link: [ckpt.pt](https://drive.google.com/file/d/1X-wtR3esGnamuVnUvuquj61YFUnWdSwq/view?usp=sharing)
+
 ## How to train?
 For convenience, all pieces of code were combined into a single Jupyter notebook and executed. Below are the available versions of the training code:
 
