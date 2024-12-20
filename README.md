@@ -31,7 +31,6 @@ def load(self, model_cpkt_path, model_ckpt="ckpt.pt", ema_model_ckpt="ema_ckpt.p
     self.model.load_state_dict(torch.load(os.path.join(model_cpkt_path, model_ckpt)))
     self.ema_model.load_state_dict(torch.load(os.path.join(model_cpkt_path, ema_model_ckpt)))
 
-# Initialize and train the model
 diffuser = Diffusion(config.noise_steps, img_size=config.img_size, num_classes=config.num_classes)
 with wandb.init(project="train_sd", group="train", config=config):
     diffuser.prepare(config)
