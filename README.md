@@ -14,7 +14,12 @@ If we go from left tp right, the images are for prompts: Airplane, Automobile, B
 As we can see it's too close to real images of that prompts, but due to lack of computational resources I didn't run it more than 250 epochs.
 
 ## How to run?
-For convenience, I combined all pieces of code into a single Jupyter notebook and ran it. You can check the full training code in [train_full.ipynb]([https://drive.google.com/file/d/1QOeQDf3s3ViqGM2LWPSpU0A0ppqKUKwu/view?usp=drive_link]) or the more organized version in [train.ipynb](https://drive.google.com/file/d/12rAATi_rHaiZwYOVcUCVmLkzQW3bUOy-/view?usp=sharing), where all necessary functions and classes are imported from external modules.
+For convenience, all pieces of code were combined into a single Jupyter notebook and executed. Below are the available versions of the training code:
+
+- **[train_full.ipynb](https://drive.google.com/file/d/1QOeQDf3s3ViqGM2LWPSpU0A0ppqKUKwu/view?usp=sharing)**: Contains the complete training workflow in one notebook.
+- **[train.ipynb](https://drive.google.com/file/d/12rAATi_rHaiZwYOVcUCVmLkzQW3bUOy-/view?usp=sharing)**: A more organized version that imports all necessary functions and classes from external modules for better readability and modularity.
+
+Feel free to explore the notebooks to understand the training process in detail.
 
 
 
