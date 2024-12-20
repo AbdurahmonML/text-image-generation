@@ -23,7 +23,7 @@ For convenience, all pieces of code were combined into a single Jupyter notebook
 The trained model weights are available for download:  
 [ckpt.pt](https://drive.google.com/file/d/1X-wtR3esGnamuVnUvuquj61YFUnWdSwq/view?usp=sharing)
 
-### Loading and Training the Model
+### Loading the Model
 You can use the following code to load the saved weights and continue training or testing:
 
 ```python
@@ -36,7 +36,6 @@ diffuser = Diffusion(config.noise_steps, img_size=config.img_size, num_classes=c
 with wandb.init(project="train_sd", group="train", config=config):
     diffuser.prepare(config)
     diffuser.load('')  # Provide the path to your checkpoint directory
-    diffuser.fit(config)
 
 
 
