@@ -11,7 +11,7 @@ The Conditional UNet architecture integrates convolutional layers, self-attentio
 If we go from left tp right, the images are for prompts: Airplane, Automobile, Bird, Cat, Deer, Dog, Frog, Horse, Ship, and Truck
 ![image](https://github.com/user-attachments/assets/054d41b7-9569-44a5-9ba4-414ec45492f5)
 
-As we can see it's too close to real images of that prompts, but due to lack of computational resources I didn't run it more than 250 epochs.
+As we can see it's close enough to real images of that prompts, but due to lack of computational resources I didn't run it more than 250 epochs.
 
 ## How to train?
 For convenience, all pieces of code were combined into a single Jupyter notebook and executed. Below are the available versions of the training code:
