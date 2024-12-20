@@ -24,7 +24,7 @@ The trained model weights are available for download:
 [ckpt.pt](https://drive.google.com/file/d/1X-wtR3esGnamuVnUvuquj61YFUnWdSwq/view?usp=sharing)
 
 ### Loading the Model
-You can use the following code to load the saved weights and continue training or testing:
+You can use the following code to load the saved weights:
 
 ```python
 def load(self, model_cpkt_path, model_ckpt="ckpt.pt", ema_model_ckpt="ema_ckpt.pt"):
@@ -35,7 +35,8 @@ diffuser = Diffusion(config.noise_steps, img_size=config.img_size, num_classes=c
 with wandb.init(project="train_sd", group="train", config=config):
     diffuser.prepare(config)
     diffuser.load('')  # Provide the path to your checkpoint directory
-
+    # optionally training:
+    # diffuser.fit(config)
 
 
 
