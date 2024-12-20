@@ -13,16 +13,30 @@ If we go from left tp right, the images are for prompts: `Airplane`, `Automobile
 
 As we can see it's close enough to real images of that prompts, but due to lack of computational resources I didn't run it more than 250 epochs.
 
-## Saved weights: 
-You can find weights of trained model by the link: [ckpt.pt](https://drive.google.com/file/d/1X-wtR3esGnamuVnUvuquj61YFUnWdSwq/view?usp=sharing)
-
 ## How to train?
 For convenience, all pieces of code were combined into a single Jupyter notebook and executed. Below are the available versions of the training code:
 
 - **[train_full.ipynb](https://drive.google.com/file/d/1QOeQDf3s3ViqGM2LWPSpU0A0ppqKUKwu/view?usp=sharing)**: Contains the complete training workflow in one notebook.
 - **[train.ipynb](https://drive.google.com/file/d/12rAATi_rHaiZwYOVcUCVmLkzQW3bUOy-/view?usp=sharing)**: A more organized version that imports all necessary functions and classes from external modules for better readability and modularity.
 
+## Saved Weights
+The trained model weights are available for download:  
+[ckpt.pt](https://drive.google.com/file/d/1X-wtR3esGnamuVnUvuquj61YFUnWdSwq/view?usp=sharing)
 
+### Loading and Training the Model
+You can use the following code to load the saved weights and continue training or testing:
+
+```python
+def load(self, model_cpkt_path, model_ckpt="ckpt.pt", ema_model_ckpt="ema_ckpt.pt"):
+    self.model.load_state_dict(torch.load(os.path.join(model_cpkt_path, model_ckpt)))
+    self.ema_model.load_state_dict(torch.load(os.path.join(model_cpkt_path, ema_model_ckpt)))
+
+# Initialize and train the model
+diffuser = Diffusion(config.noise_steps, img_size=config.img_size, num_classes=config.num_classes)
+with wandb.init(project="train_sd", group="train", config=config):
+    diffuser.prepare(config)
+    diffuser.load('')  # Provide the path to your checkpoint directory
+    diffuser.fit(config)
 
 
 
